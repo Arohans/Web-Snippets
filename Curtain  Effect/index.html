@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curtain Effect</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="inner">
+      <h1>This Is The Inner Division</h1>
+    </div>
+
+    <div class="curtain-container">
+      <div class="left-curtain" id="leftCurtain"></div>
+      <div class="right-curtain" id="rightCurtain"></div>
+      <h1 class="curtain-heading" id="heading">Click To Slide The Curtains!</h1>
+    </div>
+
+    <script>
+      const leftCurtain = document.getElementById("leftCurtain");
+      const rightCurtain = document.getElementById("rightCurtain");
+      const heading = document.getElementById("heading");
+
+      function closeCurtains() {
+        leftCurtain.classList.add("open");
+        rightCurtain.classList.add("open");
+        heading.style.display = "none";
+      }
+
+      function openCurtains() {
+        leftCurtain.classList.remove("open");
+        rightCurtain.classList.remove("open");
+        heading.style.display = "block"; // Show the heading when curtains open
+      }
+
+      leftCurtain.addEventListener("click", closeCurtains);
+      rightCurtain.addEventListener("click", closeCurtains);
+      heading.addEventListener("click", closeCurtains);
+    </script>
+  </body>
+</html>
